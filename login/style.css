@@ -1,0 +1,83 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+
+:root{
+
+    --bg-color: #232225 ; 
+    --main-color: #1DBBA5;
+    --text-color: white;
+    --side-bar: #2F2F2F;
+    --hover:#1cbaa6;
+    --done: #bab8b8;
+    
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--bg-color);
+}
+
+.container {
+    text-align: center;
+}
+
+.logo img{
+    margin-bottom: 100px;
+    height: 70px;
+    width: 220px;
+    margin-top: 80px;
+}
+
+#login-form input{
+    margin-bottom: 25px;
+    width: 424px;
+    height: 44px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    background-color: #CBCBCB ;
+    margin-bottom: 25px;
+    padding: 15px;
+    font-size: 16px;
+    display:flex;
+
+}
+
+input#login-form::placeholder{
+    
+    color: var(--side-bar);
+}
+
+
+ a{
+    color: #FFBA03;
+    
+}
+
+.btn button{
+    border-radius: 30px;
+    width: 424px;
+    height: 44px;
+    font-weight: bold;
+    background-color: #FFBA03 ;
+    font-size: 16px;
+    margin-top: 40px;
+    margin-bottom: 100px;
+}
+
+span{
+    color: #fff;
+   
+}

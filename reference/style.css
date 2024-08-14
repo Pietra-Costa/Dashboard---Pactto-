@@ -1,0 +1,261 @@
+
+.buttonbars, .buttonclose {
+    position: absolute;
+    top: 10px !important;
+    left: 10px !important;
+    cursor: pointer;
+}
+
+.buttonbars {
+    position: fixed;
+    top: 60px !important;
+    left: 40px !important;
+    color: white;
+}
+
+.buttonclose {
+    left: calc(100% - 35px) !important;
+    color: white;
+    top: 50px !important;
+}
+
+.navigation li .active, #active{
+    color: #1DBBA5;
+}
+
+
+.main-reference{
+    width: 800px;
+    background: #232225;
+    transition: margin-left 0.3s ease;
+    flex-grow: 1;
+    margin-left:0;
+    padding-left: 40px;
+    padding-top: 40px;
+    overflow-x: hidden; 
+   
+}
+
+#check:checked ~ .main-reference {
+    margin-left: 280px; 
+    z-index: 1; 
+}
+
+.main-reference h3{
+    color: white;
+    padding-left: 50px;
+    margin-top: 32px;
+    font-size: 30px;
+}
+
+
+#check:checked ~ .main-reference h3{
+    margin-left: -25px;
+}
+
+.main-reference {
+    display: flex;
+    flex-direction: column; 
+    padding: 10px;
+    background-color: #232225; 
+}
+
+.main-reference h3 {
+    margin: 0;
+    color: #ffffff;
+    margin-top: 45px;
+    margin-left: 20px;
+}
+
+.main-reference p {
+    color: #545454;
+    font-size: 14px;
+    margin-bottom: 0;
+    margin-top: 50px;
+    margin-left: 70px;
+}
+
+.referencepage {
+    display: flex;
+    justify-content: flex-start; 
+    padding: 10px;
+    background-color: #232225;
+    z-index: 1;
+}
+
+
+.upload {
+ 
+    background-color: #1DBBA5;
+    border: none;
+    outline: none;
+    padding: 13px 20px;
+    border-radius: 30px;
+    font-weight: 500;
+    white-space: nowrap;
+    width: auto; 
+    height: 50px; 
+    display: inline-flex; 
+    margin-top: 30px;
+    margin-right: 20px;
+}
+
+#check:checked ~ .main-reference p{
+    margin-left: 25px;
+}
+
+#check:checked ~ .main-reference .search{
+    margin-left: 25px;
+}
+
+.search{
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 30px;
+    margin-left: 60px;
+    margin-top: 20px;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid #757575;
+    border-radius: 3px;
+    padding: 15px;
+    color: #ffffff;
+    width: 800px;
+    
+}
+
+
+.main-reference .material-symbols-outlined {
+    position: absolute; 
+    left: calc(100% - 800px); 
+    top: 205px; 
+    font-size: 20px;
+    color: #757575;
+    transition: .1s ease-in;
+
+} 
+
+#check:checked ~ .main-reference .material-symbols-outlined{
+    left: calc(100% - 515px); 
+}
+
+
+@media (max-width: 768px) {
+    .buttonbars {
+        top: 50px;
+        left: 20px;
+    }
+
+    .buttonclose {
+        left: calc(100% - 50px);
+        top: 50px;
+    }
+
+  .search {
+        margin-left: 20px;
+        width: calc(100% - 40px); 
+    }
+
+    .main-reference p {
+        margin-left: 20px; 
+    }
+
+    .main-reference .material-symbols-outlined {
+        font-size: 18px; 
+    }
+
+    .sidebar{
+        z-index: 100;
+    }
+   
+    .referencepage {
+        padding: 10px;
+        justify-content: center; 
+    }
+
+    .upload {
+        width: 100%; 
+        height: 45px; 
+        font-size: 14px; 
+        padding: 10px;
+        margin-top: 40px;
+        margin-right: 0; 
+    }
+
+    .main-reference h3{
+        margin-left: 20px;
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .buttonbars {
+        top: 40px;
+        left: 30px;
+    }
+
+    .sidebar{
+        z-index: 100;
+    }
+
+    .buttonclose {
+        left: calc(100% - 45px);
+        top: 40px;
+    }
+
+    .main-reference {
+        padding-left: 20px;
+        padding-top: 30px;
+    }
+
+    .search {
+        margin-left: 30px;
+        width: calc(100% - 60px); 
+    }
+
+    .upload {
+        height: 45px; 
+        font-size: 14px; 
+    }
+
+    .main-reference p {
+        margin-left: 30px; 
+    }
+
+    .main-reference .material-symbols-outlined {
+        font-size: 20px; 
+        left: 500px;
+        margin-top: 15px;
+    }
+
+    .main-reference h3{
+        margin-top: 25px;
+    }
+
+    .logout .btn2{
+        bottom: 20px !important;
+    }
+}
+
+
+#check:checked ~ .main-reference {
+    margin-left: 0;
+    opacity: 0.4; 
+    pointer-events: none;
+}
+
+#check:checked ~ .main-reference::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+#check:checked ~ .main-reference .search,
+#check:checked ~ .main-reference p {
+    margin-left: 25px;
+}

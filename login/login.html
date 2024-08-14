@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Pactto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="img2/pactto-logo-yellow.svg" alt="Pactto Logo">
+        </div>
+        
+        <form id="login-form">
+            <label for="email">
+                <input type="text" id="email" placeholder="Email or username" required>
+            </label>
+
+            <label for="password">
+                <input type="password" id="password" placeholder="Password" required>
+            </label>
+
+            <a href="forgot-password">Forgot password?</a>
+
+            <div class="btn">
+                <button type="submit">LOGIN</button>
+            </div>
+
+            <span>Don't have an account? <a href="sign-up.html">Sign up for free</a></span>
+        </form>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-auth-compat.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyCKAnUz3bi83nkz1qlfDlvW4nBY9_g6jr4",
+        authDomain: "login---pactto.firebaseapp.com",
+        projectId: "login---pactto",
+        storageBucket: "login---pactto.appspot.com",
+        messagingSenderId: "322242983596",
+        appId: "1:322242983596:web:18894481b2d1f0d76fd109",
+        measurementId: "G-0EFCL0FCD4"
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      // Get elements
+      const emailField = document.getElementById('email');
+      const passwordField = document.getElementById('password');
+      const form = document.getElementById('login-form');
+
+      // Handle form submission
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const email = emailField.value;
+        const password = passwordField.value;
+
+        firebase.auth().signInWithEmailAndPassword(email, password)
+          .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            console.log('Logged in:', user);
+            window.location.href = "../home/home.html";
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.error('Error logging in:', errorCode, errorMessage);
+            alert ("Login não reconhecido");
+            // Handle login error
+          });
+      });
+    </script>
+</body>
+</html>
